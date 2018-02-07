@@ -20,6 +20,7 @@
                  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                  xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
                  xmlns:s="clr-namespace:System;assembly=mscorlib"
+                 xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
                  Title="AvalonDock">
    <local:DemoView.Description>
       <Paragraph FontSize="14" FontFamily="Segoe">
@@ -70,7 +71,12 @@
                <xcad:LayoutDocumentPaneGroup >
                   <xcad:LayoutDocumentPane>
                      <xcad:LayoutDocument ContentId="document1" Title="Document 1" IconSource="../Images/document.png" >
-                           <Button Content="Document 1 Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                           <!--<Button Content="Document 1 Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                                <WindowsFormsHost>
+                                    <WindowsFormsHost.Child>
+                                        <wf:WebBrowser Url="http://www.google.com"/>
+                                    </WindowsFormsHost.Child>
+                                </WindowsFormsHost>
                      </xcad:LayoutDocument>
                      <xcad:LayoutDocument ContentId="document2" Title="Document 2" IconSource="../Images/document.png">
                         <TextBox Text="Document 2 Content" AcceptsReturn="True"/>
